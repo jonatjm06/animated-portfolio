@@ -28,10 +28,6 @@ const App = () => {
     </section>
       <Portfolio />
     <section id="Skills">
-      <TechParallax />
-      <StarsCanvas classname="stars"/>
-    </section>
-    <section id="test">
     <TechStack/>
     </section>
     <section id="Contact">

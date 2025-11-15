@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -7,10 +7,9 @@ import {
   Preload,
   useTexture,
 } from "@react-three/drei";
-
 import CanvasLoader from "./Loader";
 
-const Ball = (props) => {
+const Ball = memo((props) => {
   const [decal] = useTexture([props.imgUrl]);
 
   return (
@@ -35,23 +34,35 @@ const Ball = (props) => {
       </mesh>
     </Float>
   );
-};
+});
 
-const BallCanvas = ({ icon }) => {
+Ball.displayName = "Ball";
+
+const BallCanvas = memo(({ icon, name }) => {
+  if (!icon) {
+    return (
+      <div className='canvas-error' role="img" aria-label={`${name} icon not available`}>
+        <p>Icon unavailable</p>
+      </div>
+    );
+  }
+
   return (
     <Canvas
       frameloop='always'
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, antialias: true }}
+      style={{ cursor: 'grab' }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
-};
+});
+
+BallCanvas.displayName = "BallCanvas";
 
 export default BallCanvas;

@@ -23,52 +23,33 @@ import git from '../assets/git.png'
 import figma from '../assets/figma.png'
 import reactjs from '../assets/reactjs.png'
 
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
+// PRIMARY SKILLS (BallCanvas 3D)
+const primaryTech = [
+  { name: "Python", icon: html },
+  { name: "JavaScript", icon: javascript },
+  { name: "React", icon: reactjs },
+  { name: "Node.js", icon: html },
+  { name: "TensorFlow", icon: html },
+  { name: "PyTorch", icon: html },
+  { name: "Docker", icon: html },
+  { name: "Google Cloud", icon: html },
+];
+
+// SECONDARY (simple chips)
+const secondaryTech = [
+  { name: "FastAPI", icon: html },
+  { name: "HTML5", icon: html },
+  { name: "CSS3", icon: css },
+  { name: "MongoDB", icon: mongodb },
+  { name: "PostgreSQL", icon: html },
+  { name: "Pandas", icon: html },
+  { name: "scikit-learn", icon: html },
+  { name: "Firebase", icon: html },
+  { name: "Linux", icon: html },
+  { name: "Git", icon: git },
+  { name: "Figma", icon: figma },
 ];
 
 
-export { technologies };
+
+export { primaryTech, secondaryTech };

@@ -1,29 +1,131 @@
-.ballsContainer{
-    margin-top: 130px;
-    display: flex; 
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    gap: 2.5rem; 
-    justify-content: center; 
+@import "../../app.scss";
 
-}
+.techstack-section {
+  position: relative;
+  padding: 80px 20px;
+  background: radial-gradient(circle at top, #1b1b3a 0%, #0c0c1d 55%);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 
-.balls{
-    display: table-cell;
-    vertical-align: middle;
+  .techstack-inner {
+    position: relative;
+    z-index: 1; // content above stars
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     text-align: center;
-    width: 13rem; 
-    height: 12rem;   
+  }
+
+  .techstack-title {
+    font-size: 42px;
+    margin-bottom: 10px;
     color: orange;
-    font-size: 22px;
-    font-weight: bold;
+
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+.stars {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+    min-height: 100%;
+  height: max(150vh, 100%);
+  pointer-events: none;
 }
+  .techstack-subtitle {
+    font-size: 16px;
+    color: #cfd2ff;
+    margin-bottom: 40px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
 
+    @include mobile {
+      font-size: 14px;
+    }
+  }
 
+  /* PRIMARY (3D balls) */
+  .ballsContainer.primary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
 
+  .balls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 
+    .ballCanvas-wrapper {
+      width: 120px;
+      height: 120px;
 
+      @include mobile {
+        width: 90px;
+        height: 90px;
+      }
+    }
 
+    .ballname {
+      font-size: 14px;
+      margin-top: 6px;
+    }
+  }
 
+  /* SECONDARY (chips) */
+  .secondaryContainer {
+    margin-top: 20px;
 
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #ffffff;
 
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    .secondaryGrid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      cursor: default;
+      backdrop-filter: blur(8px);
+      transition: box-shadow 0.15s ease, background 0.15s ease;
+
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+
+      span {
+        font-size: 13px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
