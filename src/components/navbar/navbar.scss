@@ -30,9 +30,26 @@
       display: flex;
       gap: 20px;
 
-      img {
-        width: 18px;
-        height: 18px;
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+
+        img {
+          width: 20px;
+          height: 20px;
+          display: block;
+          opacity: 0.85;
+        }
+
+        &:hover img {
+          opacity: 1;
+        }
+
+        &:hover {
+          transform: translateY(-1px) scale(1.05);
+        }
       }
     }
   }
